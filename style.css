@@ -31,7 +31,7 @@
   cursor: pointer;
   width: 24%;
   margin-bottom: 5px;
-  transition: all 0.2s ease-in-out;
+  /* transition: all 0.2s ease-in-out; */
 }
 
 .btn:hover {
