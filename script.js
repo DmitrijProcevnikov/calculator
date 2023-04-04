@@ -36,10 +36,25 @@ btns.forEach((btn) => {
   const button = document.createElement("button");
   button.classList.add("btn", btn.className);
   button.textContent = btn.text;
+  button.addEventListener("click", function (event) {
+    event.preventDefault();
+  });
   button.addEventListener("click", () => {
     handleButtonClick(btn.text);
-    changeButtonColorOnPress(button);
   });
+  button.addEventListener("mousedown", () => {
+    button.style.backgroundColor = "red";
+  });
+  button.addEventListener("mouseup", () => {
+    button.style.removeProperty("background-color");
+  });
+  button.addEventListener("touchstart", () => {
+    button.style.backgroundColor = "red";
+  });
+  button.addEventListener("touchend", () => {
+    button.style.removeProperty("background-color");
+  });
+
   calcContainer.appendChild(button);
 });
 
@@ -59,12 +74,4 @@ function handleButtonClick(value) {
         outputValue.textContent += value;
       }
   }
-}
-function changeButtonColorOnPress(button) {
-  button.addEventListener("mousedown", () => {
-    button.style.backgroundColor = "red";
-  });
-  button.addEventListener("mouseup", () => {
-    button.style.removeProperty("background-color");
-  });
 }
