@@ -8,6 +8,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  touch-action: none;
 }
 
 .output-value {
@@ -31,6 +32,10 @@
   cursor: pointer;
   width: 24%;
   margin-bottom: 5px;
+  /* -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; */
+  user-select: none;
   /* transition: all 0.2s ease-in-out; */
 }
 

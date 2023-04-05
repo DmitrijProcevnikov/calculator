@@ -75,3 +75,44 @@ function handleButtonClick(value) {
       }
   }
 }
+document.addEventListener("keydown", function (event) {
+  var allowedKeys = [
+    "+",
+    "-",
+    "*",
+    "/",
+    ".",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "0",
+  ];
+  var enter = "Enter";
+  var backspace = "Backspace";
+  var key = event.key;
+  if (key === enter) {
+    outputValue.textContent = eval(outputValue.textContent);
+  }
+  if (key === backspace) {
+    outputValue.textContent = "0";
+  }
+  if (!allowedKeys.includes(key)) {
+    event.preventDefault();
+  } else {
+    if (outputValue.textContent === "0") {
+      outputValue.textContent = key;
+    } else {
+      outputValue.textContent += key;
+    }
+  }
+});
+// document.addEventListener("keydown", function (event) {
+//   const key = event.key;
+//   outputValue.textContent += key;
+// });
