@@ -36,20 +36,20 @@ btns.forEach((btn) => {
   const button = document.createElement("button");
   button.classList.add("btn", btn.className);
   button.textContent = btn.text;
+  const isTouchDevice = "ontouchstart" in document.documentElement;
   button.addEventListener("click", function (event) {
     event.preventDefault();
   });
-  button.addEventListener("click", () => {
-    handleButtonClick(btn.text);
-  });
+  if (isTouchDevice) {
+    button.addEventListener("click", () => handleButtonClick(btn.text));
+  } else {
+    button.addEventListener("touchstart", () => handleButtonClick(btn.text));
+  }
   button.addEventListener("mousedown", () => {
     button.style.backgroundColor = "red";
   });
   button.addEventListener("mouseup", () => {
     button.style.removeProperty("background-color");
-  });
-  button.addEventListener("touchstart", () => {
-    button.style.backgroundColor = "red";
   });
   button.addEventListener("touchend", () => {
     button.style.removeProperty("background-color");
@@ -95,12 +95,19 @@ document.addEventListener("keydown", function (event) {
   ];
   var enter = "Enter";
   var backspace = "Backspace";
+  var deleteAll = "Delete";
   var key = event.key;
   if (key === enter) {
     outputValue.textContent = eval(outputValue.textContent);
   }
-  if (key === backspace) {
+  if (key === deleteAll) {
     outputValue.textContent = "0";
+  }
+  if (key === backspace) {
+    outputValue.textContent = outputValue.textContent.slice(0, -1);
+    if (outputValue.textContent === "") {
+      outputValue.textContent = "0";
+    }
   }
   if (!allowedKeys.includes(key)) {
     event.preventDefault();

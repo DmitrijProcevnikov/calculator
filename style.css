@@ -1,14 +1,15 @@
 .calc-container {
   width: 95vw;
-  height: 93vh;
+  height: 99vh;
+  max-width: 900px;
   margin: auto;
   background-color: #222;
   border-radius: 6px;
-  padding: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   touch-action: none;
+  box-sizing: content-box;
 }
 
 .output-value {
@@ -20,6 +21,8 @@
   border-radius: 6px;
   margin-bottom: 10px;
   width: 100%;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 .btn {
@@ -30,13 +33,9 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  width: 24%;
-  margin-bottom: 5px;
-  /* -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none; */
+  width: calc(25% - 10px);
+  margin: 5px;
   user-select: none;
-  /* transition: all 0.2s ease-in-out; */
 }
 
 .btn:hover {
