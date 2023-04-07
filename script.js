@@ -36,9 +36,13 @@ btns.forEach((btn) => {
   const button = document.createElement("button");
   button.classList.add("btn", btn.className);
   button.textContent = btn.text;
-  // const isTouchDevice = "ontouchstart" in document.documentElement;
-  button.addEventListener("touchstart", () => handleButtonClick(btn.text));
-  button.addEventListener("mousedown", () => handleButtonClick(btn.text));
+  const isTouchDevice = "ontouchstart" in document.documentElement;
+  if (isTouchDevice) {
+    button.addEventListener("touchstart", () => handleButtonClick(btn.text));
+  }
+  if (!isTouchDevice) {
+    button.addEventListener("mousedown", () => handleButtonClick(btn.text));
+  }
   calcContainer.appendChild(button);
 });
 
