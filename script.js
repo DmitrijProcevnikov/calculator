@@ -3,7 +3,7 @@ const calcContainer = document.createElement("div");
 calcContainer.classList.add("calc-container");
 
 // Создаем элементы для вывода значения
-const outputValue = document.createElement("div");
+const outputValue = document.createElement("button");
 outputValue.classList.add("output-value");
 outputValue.textContent = "0";
 
@@ -36,25 +36,9 @@ btns.forEach((btn) => {
   const button = document.createElement("button");
   button.classList.add("btn", btn.className);
   button.textContent = btn.text;
-  const isTouchDevice = "ontouchstart" in document.documentElement;
-  button.addEventListener("click", function (event) {
-    event.preventDefault();
-  });
-  if (isTouchDevice) {
-    button.addEventListener("touchstart", () => handleButtonClick(btn.text));
-  } else {
-    button.addEventListener("click", () => handleButtonClick(btn.text));
-  }
-  button.addEventListener("mousedown", () => {
-    button.style.backgroundColor = "red";
-  });
-  button.addEventListener("mouseup", () => {
-    button.style.removeProperty("background-color");
-  });
-  button.addEventListener("touchend", () => {
-    button.style.removeProperty("background-color");
-  });
-
+  // const isTouchDevice = "ontouchstart" in document.documentElement;
+  button.addEventListener("touchstart", () => handleButtonClick(btn.text));
+  button.addEventListener("mousedown", () => handleButtonClick(btn.text));
   calcContainer.appendChild(button);
 });
 

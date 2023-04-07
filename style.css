@@ -13,14 +13,13 @@
 }
 
 .output-value {
+  width: 100%;
   background-color: #444;
   color: #eee;
   font-size: 10vh;
-  text-align: right;
-  padding: 10px;
+  /* text-align: right; */
   border-radius: 6px;
   margin-bottom: 10px;
-  width: 100%;
   word-wrap: break-word;
   overflow: hidden;
 }
@@ -28,7 +27,7 @@
 .btn {
   background-color: #eee;
   color: #222;
-  font-size: 5vh;
+  font-size: 10vh;
   padding: 10px;
   border: none;
   border-radius: 6px;
