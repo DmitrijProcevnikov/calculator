@@ -41,9 +41,9 @@ btns.forEach((btn) => {
     event.preventDefault();
   });
   if (isTouchDevice) {
-    button.addEventListener("click", () => handleButtonClick(btn.text));
-  } else {
     button.addEventListener("touchstart", () => handleButtonClick(btn.text));
+  } else {
+    button.addEventListener("click", () => handleButtonClick(btn.text));
   }
   button.addEventListener("mousedown", () => {
     button.style.backgroundColor = "red";
