@@ -1,7 +1,5 @@
 .calc-container {
-  width: 95vw;
-  height: 99vh;
-  max-width: 900px;
+  height: 98vh;
   margin: auto;
   background-color: #222;
   border-radius: 6px;
@@ -10,25 +8,26 @@
   justify-content: space-between;
   touch-action: none;
   box-sizing: content-box;
+  overflow: scroll;
 }
 
 .output-value {
   width: 100%;
+  max-height: 25vh;
   background-color: #444;
   color: #eee;
   font-size: 10vh;
-  /* text-align: right; */
   border-radius: 6px;
   margin-bottom: 10px;
   word-wrap: break-word;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .btn {
+  max-height: 15vh;
   background-color: #eee;
   color: #222;
   font-size: 10vh;
-  padding: 10px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
