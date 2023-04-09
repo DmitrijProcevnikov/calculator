@@ -107,7 +107,3 @@ document.addEventListener("keydown", function (event) {
     }
   }
 });
-// document.addEventListener("keydown", function (event) {
-//   const key = event.key;
-//   outputValue.textContent += key;
-// });
