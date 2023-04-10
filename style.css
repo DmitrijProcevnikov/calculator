@@ -1,5 +1,5 @@
 .calc-container {
-  height: 98vh;
+  height: 90vh;
   margin: auto;
   background-color: #0d520a;
   border-radius: 6px;
@@ -8,7 +8,6 @@
   justify-content: space-between;
   touch-action: none;
   box-sizing: content-box;
-  overflow: scroll;
 }
 
 .output-value {
@@ -20,7 +19,7 @@
   border-radius: 6px;
   margin-bottom: 10px;
   word-wrap: break-word;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .btn {
